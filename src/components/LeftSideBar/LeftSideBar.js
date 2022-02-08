@@ -4,7 +4,7 @@ import classes from './LeftSideBar.module.scss';
 import addFile from "../../images/addFile.svg";
 import addFolder from "../../images/addFolder.svg";
 import lock from "../../images/lock.svg";
-
+import TreeComponent from './TreeComponent';
 const LeftSideBar=()=>{
     return(
       <div className={classes.div1}>
@@ -27,6 +27,9 @@ const LeftSideBar=()=>{
             </div>
           </button> 
 
+        </div>
+        <div className={classes.tree}>
+          <TreeComponent/>
         </div>
         
         <button className={classes.lock_button}>

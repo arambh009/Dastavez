@@ -37,26 +37,24 @@
   }
 
 }
-.buttons{
-    
+.button{
+    margin-top: 15px;
     display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-   
-    height: 100%;
+    flex-direction:row;
+    //justify-content:flex-end;
+   //background-color: blue;
+    height: 10%;
 }
 .lock_button{
-  position: absolute;
-  bottom: 0px;
-  margin:10%;
+   position: absolute;
+   bottom: 15px;
+  margin-left: 25px;
   background: #445EE2;
   border-radius: 5px;
   color: white;
   width: 80%;
   height: 44px;
-  margin-top: 20px;
-  margin-right: 10%;
-//  .mode_button{
+ 
   font-family: 'DM Sans';
   font-style: normal;
   
@@ -76,4 +74,11 @@
         margin-left: 10px;
       }
     }
+}
+.tree{
+  height: 70%;
+  box-sizing: border-box;
+
+  display: flex;
+  overflow: auto;
 }
