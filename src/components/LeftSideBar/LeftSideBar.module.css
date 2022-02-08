@@ -1,0 +1,90 @@
+.div1 {
+  position: relative;
+  padding: 10px 20px 0px 10px;
+  background: rgba(247, 248, 250, 0.5);
+  height: 100vh;
+  width: 80vh;
+}
+
+.add {
+  width: 150px;
+  height: 44px;
+  margin-top: 20px;
+  margin-left: 10%;
+  background-color: white;
+  border: 1px solid #445EE2;
+  border-radius: 5px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  color: #445EE2;
+}
+
+.add div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 100%;
+}
+
+.lock_button {
+  position: absolute;
+  bottom: 0px;
+  margin: 10%;
+  background: #445EE2;
+  border-radius: 5px;
+  color: white;
+  width: 80%;
+  height: 44px;
+  margin-top: 20px;
+  margin-right: 10%;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-size: 16px;
+  border: none;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+}
+
+.lock_button div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lock_button div p {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=LeftSideBar.module.css.map */

@@ -1,0 +1,107 @@
+@import'../../styles/variables.scss';
+
+.nav{
+   padding: 50px;
+  height: 60%;
+  //background-color: blue;
+  display: flex;
+  justify-content: space-between;
+ justify-items: center;
+ border-bottom: 1px solid #DFE0E0;
+  width:100%;
+}
+.bar{
+    margin-left: 2%;
+    width:575px;
+    border-radius:30px;
+    border:1px solid #dcdcdc;
+
+    width: 486px;
+    height: 44px;
+    font-size:16px;
+    padding: 8px 100px 8px 16px;
+    display: flex;
+    justify-content: left;
+
+    img{
+      margin-top: 2px;
+     width: 20px;
+     height: 20px;
+    }
+
+    .searchbar{
+      margin-left: 3px;
+      height:auto;
+      width:460px;
+       border:none;
+      font-size:16px;
+      outline: none;
+    }
+    
+}
+.bar:hover{
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+.bar:focus-within{
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+  outline:none;
+}
+
+.modes{
+  width: 200px;
+  height: 44px;
+  margin-right: 10%;
+  background-color: white;
+
+  border: 1px solid #445EE2;
+  // padding-left: 10px;
+  // padding-right: 100px;
+  border-radius: 5px;
+
+//  .mode_button{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  
+  color: #445EE2;
+  div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+}
+
+.settings{
+  border:1.5px solid  white;//2px solid #566474;
+  background-color: white;
+  height: 44px;
+  width:65px;
+  border: 1px solid #DFE0E0;
+  margin-right: 10%;
+}
+
+.buttons{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+ 
+  height: 100%;
+  
+
+}
+button:hover{
+  opacity: 0.8;
+  img{
+    transition: all .2s ease-in-out;
+    
+   
+      transform: scale(1.2);
+    }
+}

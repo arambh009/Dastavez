@@ -1,0 +1,79 @@
+.div1{
+  position: relative;
+    padding:10px 20px 0px 10px;
+    background: rgba(247, 248, 250, 0.5);
+    height:100vh;
+    width:80vh
+}
+.add{
+  width: 150px;
+  height: 44px;
+  margin-top: 20px;
+  margin-left: 10%;
+  
+  background-color: white;
+
+  border: 1px solid #445EE2;
+  // padding-left: 10px;
+  // padding-right: 100px;
+  border-radius: 5px;
+
+//  .mode_button{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  
+  color: #445EE2;
+  
+  div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+}
+.buttons{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+   
+    height: 100%;
+}
+.lock_button{
+  position: absolute;
+  bottom: 0px;
+  margin:10%;
+  background: #445EE2;
+  border-radius: 5px;
+  color: white;
+  width: 80%;
+  height: 44px;
+  margin-top: 20px;
+  margin-right: 10%;
+//  .mode_button{
+  font-family: 'DM Sans';
+  font-style: normal;
+  
+  font-size: 16px;
+  border:none;
+  line-height: 28px;
+  
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  
+
+    div{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      p{
+        margin-left: 10px;
+      }
+    }
+}

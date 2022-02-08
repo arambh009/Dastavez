@@ -1,0 +1,121 @@
+.nav {
+  padding: 50px;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  justify-items: center;
+  border-bottom: 1px solid #DFE0E0;
+  width: 100%;
+}
+
+.bar {
+  margin-left: 2%;
+  width: 575px;
+  border-radius: 30px;
+  border: 1px solid #dcdcdc;
+  width: 486px;
+  height: 44px;
+  font-size: 16px;
+  padding: 8px 100px 8px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.bar img {
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+.bar .searchbar {
+  margin-left: 3px;
+  height: auto;
+  width: 460px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.bar:hover {
+  -webkit-box-shadow: 1px 1px 8px 1px #dcdcdc;
+          box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+
+.bar:focus-within {
+  -webkit-box-shadow: 1px 1px 8px 1px #dcdcdc;
+          box-shadow: 1px 1px 8px 1px #dcdcdc;
+  outline: none;
+}
+
+.modes {
+  width: 200px;
+  height: 44px;
+  margin-right: 10%;
+  background-color: white;
+  border: 1px solid #445EE2;
+  border-radius: 5px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  color: #445EE2;
+}
+
+.modes div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.settings {
+  border: 1.5px solid  white;
+  background-color: white;
+  height: 44px;
+  width: 65px;
+  border: 1px solid #DFE0E0;
+  margin-right: 10%;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:hover img {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+/*# sourceMappingURL=Navbar.module.css.map */
