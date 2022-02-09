@@ -14,7 +14,7 @@ const TreeNode=({node})=>{
     }
     
     return(
-      <li >
+      <li  >
         <div onClick={onClickHandler}>
           {hasChild && (
             <div></div>
@@ -27,7 +27,7 @@ const TreeNode=({node})=>{
   
         {
           hasChild && childVis && <div>
-            <ul>
+            <ul >
                 <HelperTree data={node.children}/>
             </ul>
           </div>

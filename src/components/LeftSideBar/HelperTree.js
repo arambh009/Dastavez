@@ -7,7 +7,7 @@ const HelperTree=({data=[]})=>{//tree
         <div>
           <ul className={classes.div1}>{
             (data.map((tree) => (
-              <TreeNode key={tree.id}  node={tree}/>
+              <TreeNode key={tree.key}  node={tree}/>
             )))
             }
           </ul>

@@ -74,13 +74,13 @@ const TreeComponent=()=>{//tree list
     return(
       <div className="row">
         <div className="col text-center">
-          <p>
+          
             <div className={classes.class}>
               <div className={classes.enclosure}>
                 <HelperTree data={treeData}/>
               </div>
             </div>
-          </p>
+        
         </div>
       </div>
     );

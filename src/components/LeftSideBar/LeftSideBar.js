@@ -5,7 +5,14 @@ import addFile from "../../images/addFile.svg";
 import addFolder from "../../images/addFolder.svg";
 import lock from "../../images/lock.svg";
 import TreeComponent from './TreeComponent';
-const LeftSideBar=()=>{
+import PropTypes from 'prop-types';
+
+const LeftSideBar=({lockIt})=>{
+  const lockButtonHandler=(e)=>{
+    e.preventDefault();
+    // alert('lock button clicked');
+    lockIt();
+  }
     return(
       <div className={classes.div1}>
         
@@ -32,7 +39,7 @@ const LeftSideBar=()=>{
           <TreeComponent/>
         </div>
         
-        <button className={classes.lock_button}>
+        <button className={classes.lock_button} onClick={lockButtonHandler} >
             <div >
               <img src={lock}/>
               <p>Lock Now</p>
@@ -42,5 +49,8 @@ const LeftSideBar=()=>{
       </div>
         
     );
+}
+LeftSideBar.propTypes={
+  lockIt:PropTypes.func,
 }
 export default LeftSideBar;
