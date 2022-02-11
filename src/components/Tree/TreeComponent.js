@@ -1,6 +1,7 @@
 import React from "react";
 import HelperTree from'./HelperTree'
 import classes from './TreeComponent.module.css'
+import PropTypes from 'prop-types';
 const treeData = [
   {
     key: "0",
@@ -70,19 +71,23 @@ const treeData = [
     children: [],
   },
 ];
-const TreeComponent=()=>{//tree list
+const TreeComponent=({isDarkMode})=>{//tree list
     return(
       <div className="row">
         <div className="col text-center">
           
             <div className={classes.class}>
               <div className={classes.enclosure}>
-                <HelperTree data={treeData}/>
+                <HelperTree isDarkMode={isDarkMode} data={treeData}/>
               </div>
             </div>
         
         </div>
       </div>
     );
+}
+TreeComponent.propTypes={
+ 
+  isDarkMode:PropTypes.bool
 }
 export default TreeComponent;

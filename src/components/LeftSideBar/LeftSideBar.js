@@ -4,30 +4,30 @@ import classes from './LeftSideBar.module.scss';
 import addFile from "../../images/addFile.svg";
 import addFolder from "../../images/addFolder.svg";
 import lock from "../../images/lock.svg";
-import TreeComponent from './TreeComponent';
+import TreeComponent from '../Tree/TreeComponent';
 import PropTypes from 'prop-types';
 
-const LeftSideBar=({lockIt})=>{
+const LeftSideBar=({lockIt,isDarkMode})=>{
   const lockButtonHandler=(e)=>{
     e.preventDefault();
     // alert('lock button clicked');
     lockIt();
   }
     return(
-      <div className={classes.div1}>
+      <div className={isDarkMode?classes.div1_dark:classes.div1}>
         
         <DastavezLogo/>
         
         <div className={classes.button}>
   
-          <button className={classes.add}>
+          <button className={isDarkMode?classes.add_dark:classes.add}>
             <div >
               <img src={addFile}/>
               <p>Add File</p>
             </div>
           </button> 
 
-          <button className={classes.add}>
+          <button className={isDarkMode?classes.add_dark:classes.add}>
             <div >
               <img src={addFolder}/>
               <p>Add Folder</p>
@@ -36,10 +36,10 @@ const LeftSideBar=({lockIt})=>{
 
         </div>
         <div className={classes.tree}>
-          <TreeComponent/>
+          <TreeComponent isDarkMode={isDarkMode}/>
         </div>
         
-        <button className={classes.lock_button} onClick={lockButtonHandler} >
+        <button className={isDarkMode?classes.lock_button_dark:classes.lock_button} onClick={lockButtonHandler} >
             <div >
               <img src={lock}/>
               <p>Lock Now</p>
@@ -52,5 +52,6 @@ const LeftSideBar=({lockIt})=>{
 }
 LeftSideBar.propTypes={
   lockIt:PropTypes.func,
+  isDarkMode:PropTypes.bool
 }
 export default LeftSideBar;

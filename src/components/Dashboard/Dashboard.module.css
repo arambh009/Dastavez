@@ -3,4 +3,8 @@
   display: -ms-flexbox;
   display: flex;
 }
+
+.dark {
+  background-color: #242627;
+}
 /*# sourceMappingURL=Dashboard.module.css.map */

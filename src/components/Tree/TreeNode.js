@@ -5,7 +5,7 @@ import openFolder from '../../images/smallOpenFolder.svg';
 import closedFolder from '../../images/smallClosedFolder.svg';
 import classes from './TreeNode.module.css';
 
-const TreeNode=({node})=>{
+const TreeNode=({node,isDarkMode})=>{
     const[childVis,setChildVis]=useState(false);
   
     const hasChild=node.children?true:false;
@@ -19,7 +19,7 @@ const TreeNode=({node})=>{
           {hasChild && (
             <div></div>
           )}
-          <div className={classes.folder}>
+          <div className={isDarkMode?classes.folder_dark:classes.folder}>
               <img src={childVis?openFolder:closedFolder}/>
               {node.label}
           </div>
@@ -28,7 +28,7 @@ const TreeNode=({node})=>{
         {
           hasChild && childVis && <div>
             <ul >
-                <HelperTree data={node.children}/>
+                <HelperTree data={node.children} isDarkMode={isDarkMode}/>
             </ul>
           </div>
         } 
@@ -37,7 +37,7 @@ const TreeNode=({node})=>{
   }
   TreeNode.propTypes={
     node:PropTypes.object,
-
+    isDarkMode:PropTypes.bool
   }
   
   export default TreeNode;

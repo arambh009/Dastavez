@@ -3,7 +3,16 @@
     padding:10px 20px 0px 10px;
     background: rgba(247, 248, 250, 0.5);
     height:100vh;
+    border-radius:30px;
     width:80vh
+}
+.div1_dark{
+  position: relative;
+    padding:10px 20px 0px 10px;
+    background:#2c2d31;// rgba(247, 248, 250, 0.5);
+    height:100vh;
+    width:80vh;
+    border-radius:30px
 }
 .add{
   width: 150px;
@@ -37,12 +46,41 @@
   }
 
 }
+.add_dark{
+  width: 150px;
+  height: 44px;
+  margin-top: 20px;
+  margin-left: 10%;
+  
+  // background-color:#242627;// white;
+
+  border: 2px solid #5c6d7c;
+  border-radius: 5px;
+  background-color: transparent;
+//  .mode_button{
+  font-family: DM Sans;
+  font-style: normal;
+  
+  font-size: 16px;
+  line-height: 28px;
+  
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  
+  color: white;
+  
+  div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+}
+
 .button{
     margin-top: 15px;
     display: flex;
     flex-direction:row;
-    //justify-content:flex-end;
-   //background-color: blue;
     height: 10%;
 }
 .lock_button{
@@ -74,6 +112,37 @@
         margin-left: 10px;
       }
     }
+}
+.lock_button_dark{
+  position: absolute;
+  bottom: 15px;
+ margin-left: 25px;
+ background:transparent;// #445EE2;
+ border-radius: 18px;
+ color: white;
+ width: 80%;
+ height: 44px;
+
+ font-family: 'DM Sans';
+ font-style: normal;
+ 
+ font-size: 16px;
+ border:2px solid black ;
+ line-height: 28px;
+
+ 
+ /* identical to box height, or 175% */
+ letter-spacing: -0.02em;
+ 
+
+   div{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     p{
+       margin-left: 10px;
+     }
+   }
 }
 .tree{
   height: 70%;

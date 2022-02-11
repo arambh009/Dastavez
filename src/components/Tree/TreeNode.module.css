@@ -24,4 +24,29 @@ li {
   height: 14.24px;
   margin-left: 5px;
 }
+
+.folder_dark {
+  color: white;
+  background: #242627;
+  border-radius: 5px;
+  width: 281px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+}
+
+.folder_dark img {
+  width: 20.95px;
+  height: 14.24px;
+  margin-left: 5px;
+  padding-right: 2px;
+}
 /*# sourceMappingURL=TreeNode.module.css.map */
