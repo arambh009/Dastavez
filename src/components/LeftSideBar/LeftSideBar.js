@@ -7,7 +7,7 @@ import lock from "../../images/lock.svg";
 import TreeComponent from '../Tree/TreeComponent';
 import PropTypes from 'prop-types';
 
-const LeftSideBar=({lockIt,isDarkMode})=>{
+const LeftSideBar=({lockIt,isDarkMode,crumbs=[],enterCrumbs})=>{
   const lockButtonHandler=(e)=>{
     e.preventDefault();
     // alert('lock button clicked');
@@ -36,7 +36,7 @@ const LeftSideBar=({lockIt,isDarkMode})=>{
 
         </div>
         <div className={classes.tree}>
-          <TreeComponent isDarkMode={isDarkMode}/>
+          <TreeComponent crumbs={crumbs} enterCrumbs={enterCrumbs} isDarkMode={isDarkMode}/>
         </div>
         
         <button className={isDarkMode?classes.lock_button_dark:classes.lock_button} onClick={lockButtonHandler} >
@@ -52,6 +52,8 @@ const LeftSideBar=({lockIt,isDarkMode})=>{
 }
 LeftSideBar.propTypes={
   lockIt:PropTypes.func,
-  isDarkMode:PropTypes.bool
+  isDarkMode:PropTypes.bool,
+  crumbs:PropTypes.string,
+  enterCrumbs:PropTypes.func
 }
 export default LeftSideBar;

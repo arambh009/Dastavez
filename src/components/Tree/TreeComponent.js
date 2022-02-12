@@ -71,14 +71,15 @@ const treeData = [
     children: [],
   },
 ];
-const TreeComponent=({isDarkMode})=>{//tree list
+const TreeComponent=({isDarkMode,enterCrumbs})=>{//tree list
+  let crumbString="";
     return(
       <div className="row">
         <div className="col text-center">
           
-            <div className={classes.class}>
+            <div className={isDarkMode?`${classes.dark} ${classes.class}`:classes.class}>
               <div className={classes.enclosure}>
-                <HelperTree isDarkMode={isDarkMode} data={treeData}/>
+                <HelperTree crumbString={crumbString}  enterCrumbs={enterCrumbs} isDarkMode={isDarkMode} data={treeData}/>
               </div>
             </div>
         
@@ -88,6 +89,7 @@ const TreeComponent=({isDarkMode})=>{//tree list
 }
 TreeComponent.propTypes={
  
-  isDarkMode:PropTypes.bool
+  isDarkMode:PropTypes.bool,
+  enterCrumbs:PropTypes.func
 }
 export default TreeComponent;

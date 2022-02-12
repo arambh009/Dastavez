@@ -5,12 +5,15 @@ import openFolder from '../../images/smallOpenFolder.svg';
 import closedFolder from '../../images/smallClosedFolder.svg';
 import classes from './TreeNode.module.css';
 
-const TreeNode=({node,isDarkMode})=>{
+const TreeNode=({node,isDarkMode,crumbString,enterCrumbs})=>{
     const[childVis,setChildVis]=useState(false);
-  
+    
     const hasChild=node.children?true:false;
+    crumbString+=node.label+" / ";
+    //console.log(crumbString);
     const onClickHandler=()=>{
-      setChildVis(x=>!x)
+      setChildVis(x=>!x);
+      enterCrumbs(crumbString);
     }
     
     return(
@@ -28,7 +31,7 @@ const TreeNode=({node,isDarkMode})=>{
         {
           hasChild && childVis && <div>
             <ul >
-                <HelperTree data={node.children} isDarkMode={isDarkMode}/>
+                <HelperTree enterCrumbs={enterCrumbs} crumbString={crumbString} data={node.children} isDarkMode={isDarkMode}/>
             </ul>
           </div>
         } 
@@ -37,7 +40,9 @@ const TreeNode=({node,isDarkMode})=>{
   }
   TreeNode.propTypes={
     node:PropTypes.object,
-    isDarkMode:PropTypes.bool
+    isDarkMode:PropTypes.bool,
+    crumbString:PropTypes.string,
+    enterCrumbs:PropTypes.func
   }
   
   export default TreeNode;

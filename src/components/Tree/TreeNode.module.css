@@ -49,4 +49,8 @@ li {
   margin-left: 5px;
   padding-right: 2px;
 }
+
+.folder_dark:hover {
+  background-color: black;
+}
 /*# sourceMappingURL=TreeNode.module.css.map */
