@@ -77,6 +77,63 @@
       color: #1E272E;
       text-align: center;
   }
+   
+  .file{
+    margin-top: 10px;
+    margin-left:4rem;
+    display: flex;
+    width: 100%;
+   // margin-left: 50px;
+    //justify-content: center;
+    flex-direction: column;
+    h2{
+      justify-content: center;
+      font-family: DM Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+      /* identical to box height, or 175% */
+      letter-spacing: -0.02em;
+      /* secondary text */
+      color: #566474;
+    }
+    .file_name{
+      display: block;
+      width: 80%;
+      height: 2rem;
+      border: 1px solid #cab3b3;
+      margin-top: 1.2rem;
+      border-radius: 8px;
+      font-family: DM Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px;
+     padding-left: 10px;
+      letter-spacing: -0.02em;
+      color: #1E272E;
+    }
+    .file_content{
+      display: block;
+      width:80%;
+      height: 4rem;
+      border:1px solid rgb(202, 179, 179);
+      margin-top: 1.2rem;
+      //margin-left: 10px;
+      border-radius: 8px;
+      font-family: DM Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px;
+      padding-left:15px;
+      letter-spacing: -0.02em;
+      /* primary text */
+      color: #1E272E;
+    }
+
+  }
   .folder_name{
      display: flex;
      justify-content: center;

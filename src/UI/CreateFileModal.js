@@ -2,31 +2,43 @@ import classes from './Modal.module.css'
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
-const CreateFolderModal=({createFileFolderHandler,showCreateFolder})=>{
-    const [folderName,setFolderName]=useState('');
+const CreateFileModal=({createFileFolderHandler,showCreateFile})=>{
+    const [fileName,setFileName]=useState('');
+    const [fileContent,setFileContent]=useState('');
+
     const [error,setError]=useState('');
 
-    const folderNameHandler=(e)=>{
+    const fileNameHandler=(e)=>{
         if(e.target.value/length!=0){
-            setFolderName(e.target.value);
+            setFileName(e.target.value);
             return;
         }
          setError(true);
         return;
     }
+
+    const fileContentHandler=(e)=>{
+        if(e.target.value/length!=0){
+            setFileContent(e.target.value);
+            return;
+        }
+        
+        return;
+    }
     const submitHandler=(e)=>{
         e.preventDefault();
-        if(folderName.length!=0){
+        if(fileName.length!=0){
          //  alert('valid');
-         createFileFolderHandler({type:"folder",folderName});
-           setFolderName('');
+    
+         createFileFolderHandler({type:"file",fileName,fileContent});
+           setFileName('');
         }
          setError(true);
         return;
     }
     const cancelHandler=()=>{
-        setFolderName('');
-        showCreateFolder(false);
+        setFileName('');
+        showCreateFile(false);
         console.log("cancelled");
 
     }
@@ -36,9 +48,11 @@ const CreateFolderModal=({createFileFolderHandler,showCreateFolder})=>{
         <form className={classes.backdrop} onSubmit={submitHandler}>
             <div className={classes.modal}>
                 <div className={classes.contents}>
-                    <h2 className={classes.heading}>Create Folder</h2>
-                    <div className={classes.folder_name}>
-                        <input type='text' placeholder='Enter Folder Name' onChange={folderNameHandler}/>
+                    <h2 className={classes.heading}>Create File</h2>
+                    <div className={classes.file}>
+                        <h2>Enter File Name</h2>
+                        <input className={classes.file_name} type='text' placeholder='Enter File Name' onChange={fileNameHandler}/>
+                        <input  className={classes.file_content} type='text' placeholder='Enter text..' onChange={fileContentHandler}/>
                     </div>
                     {error && <p>Enter a valid name</p>}
                     <div className={classes.buttons}>
@@ -56,8 +70,8 @@ const CreateFolderModal=({createFileFolderHandler,showCreateFolder})=>{
         </form>
     );
 }
-CreateFolderModal.propTypes={
+CreateFileModal.propTypes={
     createFileFolderHandler:PropTypes.func,
-    showCreateFolder:PropTypes.func,
+    showCreateFile:PropTypes.func,
 }
-export default CreateFolderModal;
+export default CreateFileModal;

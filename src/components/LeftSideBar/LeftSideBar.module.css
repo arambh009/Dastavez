@@ -5,6 +5,8 @@
   height: 100vh;
   border-radius: 30px;
   width: 80vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .div1_dark {

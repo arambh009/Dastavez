@@ -7,12 +7,20 @@ import lock from "../../images/lock.svg";
 import TreeComponent from '../Tree/TreeComponent';
 import PropTypes from 'prop-types';
 
-const LeftSideBar=({lockIt,isDarkMode,crumbs=[],enterCrumbs})=>{
+const LeftSideBar=({lockIt,isDarkMode,enterCrumbsAndKey,treeData=[],showCreateFolder,showCreateFile})=>{
   const lockButtonHandler=(e)=>{
     e.preventDefault();
     // alert('lock button clicked');
     lockIt();
   }
+  const addFolderHandler=()=>{
+    showCreateFolder(true);
+  }
+  
+  const addFileHandler=()=>{
+    showCreateFile(true);
+  }
+
     return(
       <div className={isDarkMode?classes.div1_dark:classes.div1}>
         
@@ -21,14 +29,14 @@ const LeftSideBar=({lockIt,isDarkMode,crumbs=[],enterCrumbs})=>{
         <div className={classes.button}>
   
           <button className={isDarkMode?classes.add_dark:classes.add}>
-            <div >
+            <div onClick={addFileHandler}>
               <img src={addFile}/>
               <p>Add File</p>
             </div>
           </button> 
 
           <button className={isDarkMode?classes.add_dark:classes.add}>
-            <div >
+            <div onClick={addFolderHandler}>
               <img src={addFolder}/>
               <p>Add Folder</p>
             </div>
@@ -36,7 +44,7 @@ const LeftSideBar=({lockIt,isDarkMode,crumbs=[],enterCrumbs})=>{
 
         </div>
         <div className={classes.tree}>
-          <TreeComponent crumbs={crumbs} enterCrumbs={enterCrumbs} isDarkMode={isDarkMode}/>
+          <TreeComponent treeData ={treeData} enterCrumbsAndKey={enterCrumbsAndKey} isDarkMode={isDarkMode}/>
         </div>
         
         <button className={isDarkMode?classes.lock_button_dark:classes.lock_button} onClick={lockButtonHandler} >
@@ -53,7 +61,10 @@ const LeftSideBar=({lockIt,isDarkMode,crumbs=[],enterCrumbs})=>{
 LeftSideBar.propTypes={
   lockIt:PropTypes.func,
   isDarkMode:PropTypes.bool,
-  crumbs:PropTypes.string,
-  enterCrumbs:PropTypes.func
+  crumbsAndKey:PropTypes.object,
+  enterCrumbsAndKey:PropTypes.func,
+  treeData:PropTypes.array,
+  showCreateFolder:PropTypes.func,
+  showCreateFile:PropTypes.func,
 }
 export default LeftSideBar;

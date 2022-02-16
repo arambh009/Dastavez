@@ -99,6 +99,69 @@
   text-align: center;
 }
 
+.file {
+  margin-top: 10px;
+  margin-left: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.file h2 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  /* secondary text */
+  color: #566474;
+}
+
+.file .file_name {
+  display: block;
+  width: 80%;
+  height: 2rem;
+  border: 1px solid #cab3b3;
+  margin-top: 1.2rem;
+  border-radius: 8px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 10px;
+  letter-spacing: -0.02em;
+  color: #1E272E;
+}
+
+.file .file_content {
+  display: block;
+  width: 80%;
+  height: 4rem;
+  border: 1px solid #cab3b3;
+  margin-top: 1.2rem;
+  border-radius: 8px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 15px;
+  letter-spacing: -0.02em;
+  /* primary text */
+  color: #1E272E;
+}
+
 .folder_name {
   display: -webkit-box;
   display: -ms-flexbox;

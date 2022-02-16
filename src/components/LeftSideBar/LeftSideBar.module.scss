@@ -4,7 +4,8 @@
     background: rgba(247, 248, 250, 0.5);
     height:100vh;
     border-radius:30px;
-    width:80vh
+    width:80vh;
+    box-sizing: border-box;
 }
 .div1_dark{
   position: relative;
