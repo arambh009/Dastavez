@@ -39,7 +39,7 @@ const CreateFileModal=({createFileFolderHandler,showCreateFile})=>{
     const cancelHandler=()=>{
         setFileName('');
         showCreateFile(false);
-        console.log("cancelled");
+       // console.log("cancelled");
 
     }
     
@@ -52,7 +52,7 @@ const CreateFileModal=({createFileFolderHandler,showCreateFile})=>{
                     <div className={classes.file}>
                         <h2>Enter File Name</h2>
                         <input className={classes.file_name} type='text' placeholder='Enter File Name' onChange={fileNameHandler}/>
-                        <input  className={classes.file_content} type='text' placeholder='Enter text..' onChange={fileContentHandler}/>
+                        <textarea  className={classes.file_content} type='text' placeholder='Enter text..' onChange={fileContentHandler}/>
                     </div>
                     {error && <p>Enter a valid name</p>}
                     <div className={classes.buttons}>
@@ -63,8 +63,6 @@ const CreateFileModal=({createFileFolderHandler,showCreateFile})=>{
                             Create
                         </button>
                     </div>
-                    
-        
                 </div>
             </div>
         </form>

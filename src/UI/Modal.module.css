@@ -8,6 +8,12 @@
   background: rgba(30, 39, 46, 0.9);
 }
 
+.error_message {
+  padding-top: 10px;
+  margin-left: 63px;
+  color: red;
+}
+
 .modal {
   background: #FFFFFF;
   /* neutral dark */
@@ -17,9 +23,9 @@
           box-sizing: border-box;
   border-radius: 10px;
   position: fixed;
-  top: 30vh;
-  left: 10%;
-  width: 80%;
+  top: 25vh;
+  left: 29%;
+  width: 600px;
   z-index: 100;
   overflow: hidden;
 }
@@ -68,7 +74,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .buttons button {
@@ -128,10 +134,11 @@
 }
 
 .file .file_name {
+  outline: none;
   display: block;
   width: 80%;
   height: 2rem;
-  border: 1px solid #cab3b3;
+  border: 1px solid  #DFE0E0;
   margin-top: 1.2rem;
   border-radius: 8px;
   font-family: DM Sans;
@@ -144,22 +151,33 @@
   color: #1E272E;
 }
 
+.file .file_name:placeholder {
+  padding: 0px;
+}
+
 .file .file_content {
-  display: block;
-  width: 80%;
-  height: 4rem;
-  border: 1px solid #cab3b3;
-  margin-top: 1.2rem;
-  border-radius: 8px;
+  width: 80% !important;
+  outline: none;
+  padding: 10px;
+  margin-top: 30px;
+  margin-right: 10px;
+  border-radius: 10px;
   font-family: DM Sans;
   font-style: normal;
-  font-weight: 500;
+  font-weight: normal;
   font-size: 16px;
-  line-height: 21px;
-  padding-left: 15px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
   letter-spacing: -0.02em;
-  /* primary text */
-  color: #1E272E;
+  /* secondary text */
+  color: #566474;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border: 1px solid #DFE0E0;
+  height: 230px !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .folder_name {
@@ -189,10 +207,121 @@
   color: #1E272E;
 }
 
-@media (min-width: 768px) {
-  .modal {
-    left: calc(50% - 20rem);
-    width: 40rem;
-  }
+.reset_pin {
+  margin-top: 10px;
+  margin-left: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.reset_pin h2 {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  /* secondary text */
+  color: #566474;
+}
+
+.reset_pin .reset_pin_contents {
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+
+.reset_pin .reset_pin_input {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #cab3b3;
+  width: 80%;
+  border-radius: 8px;
+}
+
+.reset_pin .reset_pin_input img {
+  height: 30px;
+  padding-right: 5px;
+}
+
+.reset_pin .reset_pin_name {
+  padding-top: 3px;
+  display: block;
+  width: 90%;
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 10px;
+  letter-spacing: -0.02em;
+  color: #1E272E;
+  outline: none;
+}
+
+.reset_pin .reset_pin_name::-webkit-input-placeholder {
+  padding: 0;
+}
+
+.reset_pin .reset_pin_name:-ms-input-placeholder {
+  padding: 0;
+}
+
+.reset_pin .reset_pin_name::-ms-input-placeholder {
+  padding: 0;
+}
+
+.reset_pin .reset_pin_name::placeholder {
+  padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.fileContentModal_input {
+  outline: none;
+  padding: 10px;
+  margin-top: 30px;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  letter-spacing: -0.02em;
+  /* secondary text */
+  color: #566474;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border: 1px solid #DFE0E0;
+  height: 250px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 /*# sourceMappingURL=Modal.module.css.map */

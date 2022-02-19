@@ -10,8 +10,17 @@ import fileIcon from  "../../images/file.svg"
 import imageFileIcon from "../../images/image_file.svg"
 //import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
 
-const Navbar=({isDarkMode,DarkModeHandler,crumbs,key_,showCreateFolder,showCreateFile })=> {
+const Navbar=({
+  isDarkMode,DarkModeHandler,crumbs,
+  key_,showCreateFolder,showCreateFile,
+  setShowResetPinModal,setCrumbsAndKey,setShowFileContentModal,
+  setFileDetails
+})=> {
+  
   const [showAddOptions,setShowAddOptions]=useState(false);
+  const [showResetPinOption,setShowResetPinOption]=useState(false);
+  
+
   const modeClickHandler=()=>{
     DarkModeHandler();
   }
@@ -22,6 +31,9 @@ const Navbar=({isDarkMode,DarkModeHandler,crumbs,key_,showCreateFolder,showCreat
   }
   const showAddOptionsHandler=()=>{
     setShowAddOptions(x=>!x);
+  }
+  const showResetPinHandler=()=>{
+    setShowResetPinOption(x=>!x);
   }
   const iconIdentifier=(type)=>{
     if(type==="folder")return folderIcon;
@@ -37,8 +49,33 @@ const Navbar=({isDarkMode,DarkModeHandler,crumbs,key_,showCreateFolder,showCreat
     e.preventDefault();
     showCreateFile(true);
   }
+  
+  const onClickResetPinHandler=(e)=>{
+    e.preventDefault();
+    setShowResetPinModal(true);
+  }
 
-  //console.log(displayContents,showCreateFolder);
+  const onClickFileFolderHandler=(obj)=>{
+    //e.preventDefault();
+    console.log(obj);
+    //alert('clicked');
+    const path=crumbs+obj.label+' / ';
+    if(obj.type==="folder"){
+      setCrumbsAndKey({crumbs:path,key:obj.key});
+      
+    }
+    else{
+      const x={key:obj.key,content:"",label:obj.label}
+      const temp=JSON.parse(localStorage.getItem(obj.key));
+      if(temp){
+        setFileDetails(temp);
+        setShowFileContentModal(true);
+      }
+      else setFileDetails(x);
+      setShowFileContentModal(true);
+    }
+  }
+ // console.log(setCrumbsAndKey,showCreateFolder);
   return (
   <div className={classes.cover}>
     <div className={isDarkMode?classes.outer_dark:classes.outer}>
@@ -68,14 +105,21 @@ const Navbar=({isDarkMode,DarkModeHandler,crumbs,key_,showCreateFolder,showCreat
                 <button  onClick={onClickCreateFileHandler}>New File</button>
                 <button onClick={onClickCreateFolderHandler}>New Folder</button>
               </div>
+            </div>)
+          }
+
+          <button className={isDarkMode?`${classes.settings_dark}`:classes.settings} onClick={showResetPinHandler}>
+            <img src={settings_icon} />
+          </button>
+          
+          {showResetPinOption && (
+            <div className={classes.backdrop} onClick={showResetPinHandler}>
+              <div className={isDarkMode?classes.addOptions_dark:classes.addOptions}>
+                <button  onClick={onClickResetPinHandler}>Reset Pin</button>
+              </div>
             </div>
             )
             }
-
-          
-          <button className={isDarkMode?`${classes.settings_dark}`:classes.settings}>
-            <img src={settings_icon}/>
-          </button>
 
         </div>
       </div>
@@ -86,7 +130,7 @@ const Navbar=({isDarkMode,DarkModeHandler,crumbs,key_,showCreateFolder,showCreat
     <div className={isDarkMode?classes.contents_dark:classes.contents}>
       {
         (list && list.length>0 && list.map((obj) => (
-          <div className={classes.icons} key={obj.key}>
+          <div className={classes.icons} key={obj.key} onClick={()=>onClickFileFolderHandler(obj)}>
             <img   src={iconIdentifier(obj.type)} />
             <p className={isDarkMode?classes.icon_name_dark:classes.icon_name}>{obj.label}</p>
           </div>
@@ -103,9 +147,13 @@ Navbar.propTypes={
   isDarkMode:PropTypes.bool,
   DarkModeHandler:PropTypes.func,
   crumbs:PropTypes.string,
+  setCrumbsAndKey:PropTypes.func,
   displayContents:PropTypes.array,
   key_:PropTypes.string,
   showCreateFolder:PropTypes.func,
-  showCreateFile:PropTypes.func 
+  showCreateFile:PropTypes.func ,
+  setShowResetPinModal:PropTypes.func,
+  setShowFileContentModal:PropTypes.func,
+  setFileDetails:PropTypes.func,
 }
 export default Navbar;

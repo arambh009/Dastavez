@@ -1,5 +1,5 @@
 .forms{
-    //position: absolute;
+    //position: relative;
     width: 40%;
     height: 50%;
     margin-left: 6rem;
@@ -76,8 +76,9 @@ button:active {
   }
   
 .error_text {
-    display: inline;
-    left:30px;
+  margin-left: 10px;
+    width: 70%;
+    text-align: left;
     color: #b40e0e;
     align-items: left;
   }

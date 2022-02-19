@@ -102,8 +102,9 @@ button:active {
 }
 
 .error_text {
-  display: inline;
-  left: 30px;
+  margin-left: 10px;
+  width: 70%;
+  text-align: left;
   color: #b40e0e;
   -webkit-box-align: left;
       -ms-flex-align: left;

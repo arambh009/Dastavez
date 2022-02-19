@@ -16,5 +16,9 @@
 .name{
     font-family: 'Pacifico', cursive;
     font-size: 32px;
-    color:  #2b3c92;//rgb(235, 77, 77);
+    font-weight: 200px;
+   // color:  #2b3c92;//rgb(235, 77, 77);
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #2b3c92;//black;
 }

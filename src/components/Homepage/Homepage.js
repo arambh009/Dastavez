@@ -1,10 +1,11 @@
 import React from "react";
 import classes from './Homepage.module.css';
+import PropTypes from 'prop-types';
 //import logo from '../../images/d.png';
 import image from '../../images/man.svg';
 import HomepageForms from './HomepageForms'
 import DastavezLogo from '../Logo/DastavezLogo';
-const Homepage=()=>{
+const Homepage=({setShowDashboard})=>{
     
     return(
         
@@ -17,9 +18,12 @@ const Homepage=()=>{
                         <img src={image}></img>
                     </div>
                 </div>
-                <HomepageForms/>
+                <HomepageForms setShowDashboard={setShowDashboard}/>
             </div>
         
     )
+}
+Homepage.propTypes={
+    setShowDashboard:PropTypes.func
 }
 export default Homepage;
