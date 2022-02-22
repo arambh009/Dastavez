@@ -85,13 +85,12 @@
 }
 
 .bar {
-  width: 575px;
   border-radius: 30px;
   border: 1px solid #dcdcdc;
   width: 486px;
   height: 44px;
   font-size: 16px;
-  padding: 8px 100px 8px 16px;
+  padding: 8px 10px 8px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,11 +108,12 @@
 .bar .searchbar {
   margin-left: 3px;
   height: auto;
-  width: 460px;
+  width: 5500px;
   border: none;
   font-size: 16px;
   outline: none;
   background: transparent;
+  padding: 3px;
 }
 
 .bar_dark {
@@ -141,12 +141,12 @@
 .bar_dark .searchbar_dark {
   margin-left: 3px;
   height: auto;
-  width: 460px;
+  width: 560px;
   border: none;
   font-size: 16px;
   outline: none;
   background: transparent;
-  color: #888;
+  color: #b9c2d9;
 }
 
 .bar:hover {
@@ -254,6 +254,87 @@ button:hover img {
   padding-bottom: 20px;
 }
 
+.dataResult {
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 55px;
+  width: 486px;
+  background: #FFFFFF;
+  border: 1px solid #EBF0F5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult .dataItem {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+}
+
+.dataResult .dataItem img {
+  width: 20.95px;
+  height: 14.24px;
+  margin-left: 5px;
+}
+
+.dataResult .dataItem p {
+  margin-left: 4px;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataResult_dark {
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 55px;
+  width: 486px;
+  background: #2c2d31;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult_dark .dataItem {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #b9c2d9;
+}
+
+.dataResult_dark .dataItem img {
+  width: 20.95px;
+  height: 14.24px;
+  margin-left: 5px;
+}
+
+.dataResult_dark .dataItem p {
+  margin-left: 4px;
+}
+
+.dataResult_dark::-webkit-scrollbar {
+  display: none;
+}
+
 .icon_name {
   color: #566474;
 }
@@ -353,5 +434,9 @@ button:hover img {
   height: 44px;
   width: 65px;
   margin-right: 10%;
+}
+
+.search {
+  position: relative;
 }
 /*# sourceMappingURL=Navbar.module.css.map */

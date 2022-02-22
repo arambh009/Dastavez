@@ -24,7 +24,7 @@ const LeftSideBar=({lockIt,isDarkMode,enterCrumbsAndKey,treeData=[],showCreateFo
     return(
       <div className={isDarkMode?classes.div1_dark:classes.div1}>
         
-        <DastavezLogo/>
+        <DastavezLogo isDarkMode={isDarkMode}/>
         
         <div className={classes.button}>
   

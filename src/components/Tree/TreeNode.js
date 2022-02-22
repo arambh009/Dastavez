@@ -11,21 +11,9 @@ const TreeNode=({node,isDarkMode,crumbString,enterCrumbsAndKey})=>{
   
     const[childVis,setChildVis]=useState(false);
     const children=JSON.parse(localStorage.getItem(node.key));
-    
-    //console.log(children);//,children.length);
-    //console.log(node.key);
-    
-    // let list=[];
-    // if(localStorage.getItem(node.label)!==null){
-    //   list=JSON.parse(localStorage.getItem(node.label));
-    //   if(children!=list)setChildren(list);
-    // }
     const hasChild=children && children.length>0?true:false;
     
-    
-    
     crumbString+=node.label+" / ";
-    //console.log(crumbString);
     
     const onClickHandler=()=>{
       if(node.type==="file")return;
@@ -53,7 +41,7 @@ const TreeNode=({node,isDarkMode,crumbString,enterCrumbsAndKey})=>{
             <ul >
                 <HelperTree enterCrumbsAndKey={enterCrumbsAndKey} crumbString={crumbString} data={children} isDarkMode={isDarkMode}/>
             </ul>
-          </div>// &&console.log(children)
+          </div>
           
         } 
       

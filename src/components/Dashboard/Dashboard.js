@@ -21,7 +21,7 @@ const Dashboard=({setAccountPin,AccountPin})=>{
     const [darkMode,setDarkMode]=useState(false);
     
     // to show enter pin/lockscreen darkmode
-    const [lock,setLock]=useState(true);
+    const [lock,setLock]=useState(false);
     
     //to show 'Create Folder Modal'
     const [showCreateFolder,setShowCreateFolder]=useState(false);
@@ -35,26 +35,45 @@ const Dashboard=({setAccountPin,AccountPin})=>{
     //to show reset Pin modal
     const [showResetPinModal,setShowResetPinModal]=useState(false);
     
+    //to show and edit file content
     const [showFileContentModal,setShowFileContentModal]=useState(false);
-
+    
+    //contains file details
     const[fileDetails,setFileDetails]=useState('');
+
+    // will help in searching of Files and Folders 
+    const[allFilesFolders,setAllFilesFolders]=useState([]);
+
+    useEffect(()=>{ 
+        if(allFilesFolders.length>0)localStorage.setItem('All_data',JSON.stringify(allFilesFolders));
+        console.log('iuviyivvv');
+    },[allFilesFolders]);
+    
     useEffect(()=>{
         // to initialize by graph like left UI (display of files)
        localStorage.setItem('-1',JSON.stringify(initData));
+       const arr=JSON.parse(localStorage.getItem('All_data'));
+       if(arr){
+           setAllFilesFolders(arr);
+       }
     },[])
 
+    // locks
     const lockHandler=()=>{
         setLock(true);
     }
     
-    
+    //sets latest values of crumbs and key
     const crumbsAndKeyHandler=(crumbsAndKey)=>{
-        setCrumbsAndKey(crumbsAndKey);//sets latest values of crumbs and key
+        setCrumbsAndKey(crumbsAndKey);
     }
-    const darkModeHandler=()=>{//changes mode 
+
+    //changes mode 
+    const darkModeHandler=()=>{
             setDarkMode(x=>!x);
     }
-    
+    console.log(allFilesFolders);
+
     const createFileFolderHandler=(data)=>{
         
         if(data.type==='folder'){
@@ -64,17 +83,23 @@ const Dashboard=({setAccountPin,AccountPin})=>{
             }
             
             let idx=(list)?list.length:0;
-            const obj={key:crumbsAndKey.key+"-"+String(idx), label:data.folderName,type:"folder", parent:crumbsAndKey.key};
+            const obj={ key:crumbsAndKey.key+"-"+String(idx), 
+                        label:data.folderName,
+                        type:"folder", 
+                        parent:crumbsAndKey.key, 
+                        crumbs:crumbsAndKey.crumbs+data.folderName+' / ' };
             
             const arr=[...list,obj];
             setDisplayContents(arr);//to update content to display below navbar
-    
-            console.log(arr);
+            //console.log(arr);
+
+            setAllFilesFolders([...allFilesFolders,obj]);//updating our allFilesFolders array for searching purpose
             
             localStorage.setItem(crumbsAndKey.key,JSON.stringify(arr));//updating local storage
 
             setShowCreateFolder(false); //closing 'create folder modal'  
         }
+
         else if(data.type==='file'){
             console.log(data);
             let list=[];
@@ -83,24 +108,37 @@ const Dashboard=({setAccountPin,AccountPin})=>{
             }
             
             let idx=(list)?list.length:0;
-            const obj={key:crumbsAndKey.key+"-"+String(idx), label:data.fileName,type:"file",content:data.fileContent, parent:crumbsAndKey.key};
+
+            const obj={ key:crumbsAndKey.key+"-"+String(idx), 
+                        label:data.fileName,
+                        type:"file",
+                        content:data.fileContent, 
+                        parent:crumbsAndKey.key 
+            };
             
             const arr=[...list,obj];
             setDisplayContents(arr);//to update content to display below navbar
     
             console.log(arr);
-            localStorage.setItem(crumbsAndKey.key+"-"+String(idx),JSON.stringify({ key:crumbsAndKey.key+"-"+String(idx),label:data.fileName,content:JSON.stringify(data.fileContent)}));//setting up file content: ;
+            
+            localStorage.setItem(
+                crumbsAndKey.key+"-"+String(idx),JSON.stringify(
+                {   key:crumbsAndKey.key+"-"+String(idx),
+                    label:data.fileName,
+                    content:JSON.stringify(data.fileContent)
+                })
+            );//setting up file content: ;
+            
+            // const x=allFilesFolders;
+            // x.push(onj)
+            setAllFilesFolders([...allFilesFolders,obj]);//updating our allFilesFolders array for searching purpose
             
             localStorage.setItem(crumbsAndKey.key,JSON.stringify(arr));//updating local storage
+            
             setShowCreateFile(false); //closing 'create folder modal'  
         }
     }
     
-     useEffect(()=>{ 
-        
-     },[displayContents])
-
-     
     return(
         <div className={darkMode?`${classes.div1} ${classes.dark}`:classes.div1}>
 
@@ -119,6 +157,7 @@ const Dashboard=({setAccountPin,AccountPin})=>{
                 setCrumbsAndKey={setCrumbsAndKey}
                 setShowFileContentModal={setShowFileContentModal} 
                 setFileDetails={setFileDetails}
+                allFilesFolders={allFilesFolders}
             />
             
             {showCreateFolder && <CreateFolderModal showCreateFolder={setShowCreateFolder} createFileFolderHandler={createFileFolderHandler}/>}

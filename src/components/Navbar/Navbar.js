@@ -8,19 +8,42 @@ import PropTypes from 'prop-types';
 import folderIcon from  "../../images/folder.svg"
 import fileIcon from  "../../images/file.svg"
 import imageFileIcon from "../../images/image_file.svg"
-//import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
+import smallFileIcon from "../../images/smallFile.svg"
+import smallFolderIcon from "../../images/smallClosedFolder.svg"
 
 const Navbar=({
   isDarkMode,DarkModeHandler,crumbs,
   key_,showCreateFolder,showCreateFile,
   setShowResetPinModal,setCrumbsAndKey,setShowFileContentModal,
-  setFileDetails
+  setFileDetails,allFilesFolders=[]
 })=> {
-  
   const [showAddOptions,setShowAddOptions]=useState(false);
   const [showResetPinOption,setShowResetPinOption]=useState(false);
-  
 
+  const [filteredData, setFilteredData] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
+
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    setWordEntered(searchWord);
+    console.log(searchWord);
+    const newFilter = allFilesFolders.filter((value) => {
+      return value.label.toLowerCase().includes(searchWord.toLowerCase());
+    });
+    console.log(newFilter);
+    if (searchWord === "") {
+      setFilteredData([]);
+    } else {
+      setFilteredData(newFilter);
+    }
+  };
+
+  // const clearInput = () => {
+  //   setFilteredData([]);
+  //   setWordEntered("");
+  // };
+
+  // console.log(allFilesFolders);
   const modeClickHandler=()=>{
     DarkModeHandler();
   }
@@ -54,14 +77,16 @@ const Navbar=({
     e.preventDefault();
     setShowResetPinModal(true);
   }
+  const onClickSearchResultsHandler=(obj)=>{
+    setFilteredData([]);
+    setWordEntered("");
+    onClickFileFolderHandler(obj);
+  }
 
   const onClickFileFolderHandler=(obj)=>{
-    //e.preventDefault();
     console.log(obj);
-    //alert('clicked');
-    const path=crumbs+obj.label+' / ';
     if(obj.type==="folder"){
-      setCrumbsAndKey({crumbs:path,key:obj.key});
+      setCrumbsAndKey({crumbs:obj.crumbs,key:obj.key});
       
     }
     else{
@@ -81,12 +106,30 @@ const Navbar=({
     <div className={isDarkMode?classes.outer_dark:classes.outer}>
 
       <div className={isDarkMode?classes.nav_dark:classes.nav}>
-        
-        <div className={isDarkMode?classes.bar_dark:classes.bar}>
-          <img src={search_icon}/>
-          <input className={isDarkMode?`${classes.searchbar_dark}`:classes.searchbar} type="text" title="Search" placeholder='Search...'/>
+
+        <div className={classes.search}>
+          <div className={isDarkMode?classes.bar_dark:classes.bar} >
+            <img src={search_icon}/>
+            <input className={isDarkMode?`${classes.searchbar_dark}`:classes.searchbar} value={wordEntered}
+            onChange={handleFilter} type="text" title="Search" placeholder='Search...'/>
+          </div>
+
+          {filteredData.length>0 && (
+
+            <div className={isDarkMode?classes.dataResult_dark:classes.dataResult}>
+              {filteredData.slice(0, 15).map((data) => {
+                return (
+                  <div key={data.key} className={classes.dataItem}  onClick={()=>onClickSearchResultsHandler(data)}>
+                    <img src={data.type==='file'?smallFileIcon:smallFolderIcon}/>
+                    <p>{data.label}</p>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
-      
+        
+        
         <div className={classes.buttons}>
           <button className={classes.modes} onClick={modeClickHandler}>
             <div >
@@ -155,5 +198,6 @@ Navbar.propTypes={
   setShowResetPinModal:PropTypes.func,
   setShowFileContentModal:PropTypes.func,
   setFileDetails:PropTypes.func,
+  allFilesFolders:PropTypes.array
 }
 export default Navbar;
