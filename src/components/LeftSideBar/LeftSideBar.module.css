@@ -1,10 +1,25 @@
+.outer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 10px;
+}
+
 .div1 {
   position: relative;
-  padding: 10px 20px 0px 10px;
+  padding: 10px 20px 0px 8px;
   background: rgba(247, 248, 250, 0.5);
   height: 100vh;
   border-radius: 30px;
-  width: 80vh;
+  width: 60vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -14,15 +29,15 @@
   padding: 10px 20px 0px 10px;
   background: #2c2d31;
   height: 100vh;
-  width: 80vh;
+  width: 60vh;
   border-radius: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .add {
-  width: 150px;
+  width: 40%;
   height: 44px;
-  margin-top: 20px;
-  margin-left: 10%;
   background-color: white;
   border: 1px solid #445EE2;
   border-radius: 5px;
@@ -50,10 +65,8 @@
 }
 
 .add_dark {
-  width: 150px;
+  width: 40%;
   height: 44px;
-  margin-top: 20px;
-  margin-left: 10%;
   border: 2px solid #5c6d7c;
   border-radius: 5px;
   background-color: transparent;
@@ -79,16 +92,26 @@
           justify-content: space-evenly;
 }
 
-.button {
+.buttons {
   margin-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 10%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .lock_button {
@@ -163,11 +186,46 @@
 
 .tree {
   height: 70%;
+  width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: auto;
+  margin-top: 0px;
+}
+
+.resizer {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 50px;
+  width: 50px;
+}
+
+.resizer .one {
+  width: 2px;
+  height: 40px;
+  margin: 1px;
+  background-color: #888;
+}
+
+.resizer .two {
+  width: 2px;
+  height: 30px;
+  margin: 1px;
+  background-color: #888;
 }
 /*# sourceMappingURL=LeftSideBar.module.css.map */

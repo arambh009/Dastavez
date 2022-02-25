@@ -46,7 +46,7 @@ const Dashboard=({setAccountPin,AccountPin})=>{
 
     useEffect(()=>{ 
         if(allFilesFolders.length>0)localStorage.setItem('All_data',JSON.stringify(allFilesFolders));
-        console.log('iuviyivvv');
+     
     },[allFilesFolders]);
     
     useEffect(()=>{
@@ -72,7 +72,7 @@ const Dashboard=({setAccountPin,AccountPin})=>{
     const darkModeHandler=()=>{
             setDarkMode(x=>!x);
     }
-    console.log(allFilesFolders);
+    //console.log(allFilesFolders);
 
     const createFileFolderHandler=(data)=>{
         
