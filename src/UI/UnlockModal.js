@@ -6,14 +6,22 @@ const UnlockModal=({AccountPin,setLock})=>{
     const [otp, setOtp] = useState(new Array(4).fill(""));
     const[error,setError]=useState(false);
     //console.log(error)
+   
     const toggleHandler=(element,index)=>{
-        //console.log(element.value,index);
+      //  console.log(element.value,index);
         if(element.value!='' && element.nextSibling && index!=4){
             element.nextSibling.focus();
+
           }else if(element.value===''&& element.previousSibling){
             //console.log(element.value,index);
             element.previousSibling.focus(); 
           }
+        //   else{
+        //       //console.log(element.value,index);
+        //       //console.log(otp);
+        //      if(index!=0) document.getElementById(`${index}`).previousSibling.focus();
+        //     //otp[index-1]?.current?.focus();
+        //   }
           return;
     }
     const onClickUnlockHandler=()=>{
@@ -28,6 +36,24 @@ const UnlockModal=({AccountPin,setLock})=>{
             setError(true);
         }
     }
+    //document.q
+    // const handleBackspace = (element,idx) => {
+    //     console.log('fc1');
+        
+    //     if(element.value===''&& element.previousSibling){
+    //         //console.log(element.value,index);
+    //         console.log(idx,"jijipo");
+    //         element.previousSibling.focus(); 
+    //       }
+    //     if (otp[idx] === "" && idx!=0) {
+    //      // focusInput(idx - 1);
+    //      console.log('fc2');
+    //       otp[idx-1]?.current?.focus();
+    //     // } else {
+    //     //   pass[idx] = "";
+    //     // }
+    //   }
+    // }
     const handleChange = (element, index) => {
       
         if(isNaN(element.value)){
@@ -50,10 +76,21 @@ const UnlockModal=({AccountPin,setLock})=>{
                                 type="text"
                                 name="otp"
                                 maxLength="1"
+                                id={String(index)}
                                 key={index}
                                 value={data}
                                 onChange={e => handleChange(e.target, index)}
                                 onFocus={e => e.target.select()}
+                                 //onKeyPress={(e)=>onKeyPressHandler(e,index)}
+                                 onKeyDown={(e) => {
+                                    if (e.key === "Enter") {
+                                      onClickUnlockHandler();
+                                    } else if (e.key === "Backspace") {
+                                        console.log('bsc');
+                                        toggleHandler(e,index);
+                                     // handleBackspace(e,index);
+                                    }
+                                  }}
                             />
                         );
                     })}
