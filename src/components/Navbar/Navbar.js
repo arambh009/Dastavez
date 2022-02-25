@@ -130,7 +130,7 @@ const Navbar=({
         </div>
         
         
-        <div className={classes.buttons}>
+        
           <button className={classes.modes} onClick={modeClickHandler}>
             <div >
               <img src={beam}></img>
@@ -164,7 +164,7 @@ const Navbar=({
             )
             }
 
-        </div>
+        
       </div>
 
       <div className={isDarkMode?classes.crumbs_dark:classes.crumbs}>{crumbs}</div>

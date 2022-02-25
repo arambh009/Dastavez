@@ -28,13 +28,13 @@ const TreeNode=({node,isDarkMode,crumbString,enterCrumbsAndKey})=>{
     }
     return(
       <li  >
-        <div onClick={onClickHandler}>
+       
          
-          <div className={isDarkMode?classes.folder_dark:classes.folder}>
+          <div className={isDarkMode?classes.folder_dark:classes.folder} onClick={onClickHandler}>
               <img src={iconSelector()}/>
               {node.label}
           </div>
-        </div>
+       
   
         {
           hasChild && childVis && <div>

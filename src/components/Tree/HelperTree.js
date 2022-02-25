@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classes from './HelperTree.module.css'
 const HelperTree=({data=[],isDarkMode,crumbString,enterCrumbsAndKey})=>{//tree
     return(
-        <div>
+        
           <ul className={classes.div1}>{
             (data.map((tree) => (
               <TreeNode key={tree.key}  enterCrumbsAndKey={enterCrumbsAndKey} crumbString={crumbString} isDarkMode={isDarkMode} node={tree}/>
@@ -12,7 +12,7 @@ const HelperTree=({data=[],isDarkMode,crumbString,enterCrumbsAndKey})=>{//tree
             }
           </ul>
         
-      </div>
+    
     )
 }
 
