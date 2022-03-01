@@ -24,6 +24,10 @@ li {
   margin-left: 5px;
 }
 
+.folder:hover {
+  cursor: pointer;
+}
+
 .folder_dark {
   color: #b9c2d9;
   background: #242627;
@@ -50,5 +54,6 @@ li {
 
 .folder_dark:hover {
   background-color: black;
+  cursor: pointer;
 }
 /*# sourceMappingURL=TreeNode.module.css.map */

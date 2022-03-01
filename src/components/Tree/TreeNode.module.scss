@@ -19,6 +19,11 @@ li{
     margin-left: 5px;
    }
 }
+.folder:hover{
+    // opacity: 1;
+    cursor: pointer;
+}
+
 .folder_dark{
     color:#b9c2d9;//white;// #798a9c;
     background: #242627;
@@ -43,4 +48,5 @@ li{
 }
 .folder_dark:hover{
     background-color: black;
+    cursor: pointer;
 }

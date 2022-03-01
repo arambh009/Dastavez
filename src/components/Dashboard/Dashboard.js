@@ -21,7 +21,7 @@ const Dashboard=({setAccountPin,AccountPin})=>{
     const [darkMode,setDarkMode]=useState(false);
     
     // to show enter pin/lockscreen darkmode
-    const [lock,setLock]=useState(false);
+    const [lock,setLock]=useState(true);
     
     //to show 'Create Folder Modal'
     const [showCreateFolder,setShowCreateFolder]=useState(false);

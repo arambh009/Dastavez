@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import image from '../../images/man.svg';
 import HomepageForms from './HomepageForms'
 import DastavezLogo from '../Logo/DastavezLogo';
-const Homepage=({setShowDashboard})=>{
+const Homepage=({setShowDashboard,setAccountPin})=>{
     
     return(
         
@@ -18,12 +18,13 @@ const Homepage=({setShowDashboard})=>{
                         <img src={image}></img>
                     </div>
                 </div>
-                <HomepageForms setShowDashboard={setShowDashboard}/>
+                <HomepageForms setAccountPin={setAccountPin} setShowDashboard={setShowDashboard}/>
             </div>
         
     )
 }
 Homepage.propTypes={
-    setShowDashboard:PropTypes.func
+    setShowDashboard:PropTypes.func,
+    setAccountPin:PropTypes.func,
 }
 export default Homepage;

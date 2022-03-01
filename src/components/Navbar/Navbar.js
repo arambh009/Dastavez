@@ -137,11 +137,16 @@ const Navbar=({
               <p>{isDarkMode?'Light Mode':'Dark Mode'}</p>
             </div>
           </button>       
-          
-          <button onClick={showAddOptionsHandler} className={isDarkMode?` ${classes.settings_dark}`:classes.settings}>
-            <img src={addIcon}/>
-          </button>
+            <div className={classes.settings_cover}>
+              <button onClick={showAddOptionsHandler} className={isDarkMode?` ${classes.settings_dark}`:classes.settings}>
+                <img src={addIcon}/>
+              </button>
 
+              <button className={isDarkMode?`${classes.settings_dark}`:classes.settings} onClick={showResetPinHandler}>
+                <img src={settings_icon} />
+              </button>
+            </div>
+         
           {showAddOptions && (
             <div className={classes.backdrop} onClick={showAddOptionsHandler}>
               <div className={isDarkMode?classes.addOptions_dark:classes.addOptions}>
@@ -150,10 +155,8 @@ const Navbar=({
               </div>
             </div>)
           }
-
-          <button className={isDarkMode?`${classes.settings_dark}`:classes.settings} onClick={showResetPinHandler}>
-            <img src={settings_icon} />
-          </button>
+         
+                    
           
           {showResetPinOption && (
             <div className={classes.backdrop} onClick={showResetPinHandler}>

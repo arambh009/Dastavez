@@ -26,9 +26,10 @@ const UnlockModal=({AccountPin,setLock})=>{
     }
     const onClickUnlockHandler=()=>{
         //alert(otp.join(""));
+        console.log(otp);
         const enteredPin=otp.join("")
-        //console.log(AccountPin,enteredPin);
-        if(enteredPin===AccountPin){
+         console.log(AccountPin,enteredPin);
+        if(enteredPin==AccountPin){
             setLock(false);
             console.log('matched');
         }
@@ -55,7 +56,7 @@ const UnlockModal=({AccountPin,setLock})=>{
     //   }
     // }
     const handleChange = (element, index) => {
-      
+        // console.log(element,index);
         if(isNaN(element.value)){
             return;
         }

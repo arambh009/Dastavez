@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from './HomepageForms.module.css';
 import PropTypes from 'prop-types';
 
-const HomepageForms=({setShowDashboard})=>{
+const HomepageForms=({setShowDashboard,setAccountPin})=>{
     const [pin,setPin]=useState('');
     const [confirmedPin,setConfirmedPin]=useState('');
     const [hasError,setHasError]=useState(false);
@@ -16,7 +16,7 @@ const HomepageForms=({setShowDashboard})=>{
     }
     const onSubmitHandler=(e)=>{
         e.preventDefault();
-        console.log("jghv");
+       // console.log("jghv");
         if(pin.length!=4){
             setHasError(true);
             setErrorMessage('*pin must be of length 4');
@@ -25,6 +25,7 @@ const HomepageForms=({setShowDashboard})=>{
         if(pin===confirmedPin){
            // alert('pin confirmed');
             localStorage.setItem('pin',JSON.stringify(pin));
+            setAccountPin(pin);
             setHasError(false);
             setShowDashboard(true);
         }
@@ -49,6 +50,7 @@ const HomepageForms=({setShowDashboard})=>{
     );
 }
 HomepageForms.propTypes={
-    setShowDashboard:PropTypes.func
+    setShowDashboard:PropTypes.func,
+    setAccountPin:PropTypes.func,
 }
 export default HomepageForms;
