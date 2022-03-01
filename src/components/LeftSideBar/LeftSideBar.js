@@ -24,9 +24,9 @@ const LeftSideBar=({lockIt,isDarkMode,enterCrumbsAndKey,treeData=[],showCreateFo
      // console.log('drag');
       if (sidebar) {
         
-        if(startWidth + e.clientX - startX>300 && startWidth + e.clientX - startX<=1100)sidebar.style.width =startWidth + e.clientX - startX + "px";
+        if(startWidth + e.clientX - startX>300 && startWidth + e.clientX - startX<=1030)sidebar.style.width =startWidth + e.clientX - startX + "px";
         else if(startWidth + e.clientX - startX<300)sidebar.style.width ="300px";
-        else sidebar.style.width ="1100px";
+        else sidebar.style.width ="1030px";
         //console.log(sidebar);
       }
     }

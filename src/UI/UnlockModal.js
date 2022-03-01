@@ -26,9 +26,9 @@ const UnlockModal=({AccountPin,setLock})=>{
     }
     const onClickUnlockHandler=()=>{
         //alert(otp.join(""));
-        console.log(otp);
+        // console.log(otp);
         const enteredPin=otp.join("")
-         console.log(AccountPin,enteredPin);
+        //  console.log(AccountPin,enteredPin);
         if(enteredPin==AccountPin){
             setLock(false);
             console.log('matched');

@@ -38,12 +38,7 @@ const Navbar=({
     }
   };
 
-  // const clearInput = () => {
-  //   setFilteredData([]);
-  //   setWordEntered("");
-  // };
 
-  // console.log(allFilesFolders);
   const modeClickHandler=()=>{
     DarkModeHandler();
   }
@@ -53,9 +48,15 @@ const Navbar=({
     list=JSON.parse(localStorage.getItem(key_));
   }
   const showAddOptionsHandler=()=>{
+    if(showResetPinOption===true){
+      setShowResetPinOption(false);
+    }
     setShowAddOptions(x=>!x);
   }
   const showResetPinHandler=()=>{
+    if( showAddOptions===true){
+      setShowAddOptions(false);
+    }
     setShowResetPinOption(x=>!x);
   }
   const iconIdentifier=(type)=>{
@@ -129,45 +130,42 @@ const Navbar=({
           )}
         </div>
         
-        
-        
           <button className={classes.modes} onClick={modeClickHandler}>
             <div >
               <img src={beam}></img>
               <p>{isDarkMode?'Light Mode':'Dark Mode'}</p>
             </div>
-          </button>       
-            <div className={classes.settings_cover}>
-              <button onClick={showAddOptionsHandler} className={isDarkMode?` ${classes.settings_dark}`:classes.settings}>
-                <img src={addIcon}/>
-              </button>
+          </button> 
 
-              <button className={isDarkMode?`${classes.settings_dark}`:classes.settings} onClick={showResetPinHandler}>
-                <img src={settings_icon} />
-              </button>
-            </div>
-         
-          {showAddOptions && (
-            <div className={classes.backdrop} onClick={showAddOptionsHandler}>
-              <div className={isDarkMode?classes.addOptions_dark:classes.addOptions}>
-                <button  onClick={onClickCreateFileHandler}>New File</button>
-                <button onClick={onClickCreateFolderHandler}>New Folder</button>
-              </div>
-            </div>)
-          }
-         
-                    
-          
-          {showResetPinOption && (
-            <div className={classes.backdrop} onClick={showResetPinHandler}>
-              <div className={isDarkMode?classes.addOptions_dark:classes.addOptions}>
-                <button  onClick={onClickResetPinHandler}>Reset Pin</button>
-              </div>
-            </div>
-            )
-            }
+          <div className={classes.settings_cover}>
 
-        
+             
+                <button onClick={showAddOptionsHandler} className={isDarkMode?` ${classes.add_Icon_dark}`:classes.add_Icon}>
+                  <img src={addIcon}/>
+                </button>
+
+                {showAddOptions && (
+                  <div onClick={showAddOptionsHandler}>
+                    <div className={isDarkMode?classes.addOptions_dark:classes.addOptions}>
+                      <button  onClick={onClickCreateFileHandler}>New File</button>
+                      <button onClick={onClickCreateFolderHandler}>New Folder</button>
+                    </div>
+                  </div>)
+                }
+             
+                  <button className={isDarkMode?`${classes.settings_dark}`:classes.settings} onClick={showResetPinHandler}>
+                    <img src={settings_icon} />
+                  </button>
+
+                  {showResetPinOption && (
+                    <div onClick={showResetPinHandler}>
+                      <div className={isDarkMode?classes.addOptions_dark:classes.addOptions}>
+                        <button  onClick={onClickResetPinHandler}>Reset Pin</button>
+                      </div>
+                    </div>
+                    )
+                  }
+          </div>
       </div>
 
       <div className={isDarkMode?classes.crumbs_dark:classes.crumbs}>{crumbs}</div>
