@@ -10,7 +10,7 @@ const CreateFileModal=({createFileFolderHandler,showCreateFile})=>{
 
     const fileNameHandler=(e)=>{
         if(e.target.value/length!=0){
-            setFileName(e.target.value);
+            setFileName(e.target.value.trim());
             return;
         }
          setError(true);
@@ -54,7 +54,7 @@ const CreateFileModal=({createFileFolderHandler,showCreateFile})=>{
                         <input className={classes.file_name} type='text' placeholder='Enter File Name' onChange={fileNameHandler}/>
                         <textarea  className={classes.file_content} type='text' placeholder='Enter text..' onChange={fileContentHandler}/>
                     </div>
-                    {error && <p>Enter a valid name</p>}
+                    {error && <p className={classes.error_message}>*Enter a valid name</p>}
                     <div className={classes.buttons}>
                         <button type="button" onClick={cancelHandler}>
                             Cancel

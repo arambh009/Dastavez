@@ -1,4 +1,7 @@
 .backdrop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -6,6 +9,12 @@
   height: 100vh;
   z-index: 10;
   background: rgba(30, 39, 46, 0.9);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .error_message {
@@ -15,16 +24,13 @@
 }
 
 .modal {
+  margin: auto;
   background: #FFFFFF;
-  /* neutral dark */
   padding: 10px;
   border: 1px solid #C8D6E5;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 10px;
-  position: fixed;
-  top: 25vh;
-  left: 29%;
   width: 600px;
   z-index: 100;
   overflow: hidden;

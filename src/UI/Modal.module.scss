@@ -1,4 +1,5 @@
 .backdrop {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -6,6 +7,8 @@
     height: 100vh;
     z-index: 10;
    background: rgba(30, 39, 46, 0.9);
+    justify-content: center;
+   align-items: center;
 }
 
 .error_message{
@@ -14,15 +17,12 @@
   color: red;
 }
   .modal {
+      margin: auto;
     background: #FFFFFF;
-    /* neutral dark */
     padding: 10px;
     border: 1px solid #C8D6E5;
     box-sizing: border-box;
-    border-radius: 10px;
-    position: fixed;
-    top: 25vh;
-    left: 29%;
+    border-radius: 10px;    
     width: 600px;
     z-index: 100;
     overflow: hidden;
@@ -145,25 +145,9 @@
     border: 1px solid #DFE0E0;
     height: 230px !important;
    box-sizing: border-box;
-      // //display: block;
-      // width:80%;
-      // height: 4rem;
-      // border:1px solid rgb(202, 179, 179);
-      // margin-top: 1.2rem;
-      // //margin-left: 10px;
-      // border-radius: 8px;
-      // font-family: DM Sans;
-      // font-style: normal;
-      // font-weight: 500;
-      // font-size: 16px;
-      // line-height: 21px;
-      // padding-left:15px;
-      // letter-spacing: -0.02em;
-      // /* primary text */
-      // color: #1E272E;
-    }
-
   }
+
+}
   .folder_name{
      display: flex;
      justify-content: center;
@@ -189,12 +173,6 @@
     
   }
 
-  // @media (min-width: 768px) {
-  //   .modal {
-  //     left: calc(50% - 20rem);
-  //     width: 40rem;
-  //   }
-  // }
   .reset_pin{
     margin-top: 10px;
     margin-left:4rem;

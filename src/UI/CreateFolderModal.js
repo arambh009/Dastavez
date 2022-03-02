@@ -8,7 +8,7 @@ const CreateFolderModal=({createFileFolderHandler,showCreateFolder})=>{
 
     const folderNameHandler=(e)=>{
         if(e.target.value/length!=0){
-            setFolderName(e.target.value);
+            setFolderName(e.target.value.trim());
             return;
         }
          setError(true);
@@ -40,7 +40,7 @@ const CreateFolderModal=({createFileFolderHandler,showCreateFolder})=>{
                     <div className={classes.folder_name}>
                         <input type='text' placeholder='Enter Folder Name' onChange={folderNameHandler}/>
                     </div>
-                    {error && <p>Enter a valid name</p>}
+                    {error && <p className={classes.error_message}>*Enter a valid name</p>}
                     <div className={classes.buttons}>
                         <button type="button" onClick={cancelHandler}>
                             Cancel
