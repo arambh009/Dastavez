@@ -1,9 +1,9 @@
 .addOptions {
   position: absolute;
   top: 54px;
-  left: 0px;
+  left: 20px;
   z-index: 1;
-  border: 3px solid #EBF0F5;
+  border: 1.5px solid #DFE0E0;
   border-radius: 18px;
   background: white;
   display: -webkit-box;
@@ -396,6 +396,10 @@ button:hover img {
           justify-content: space-evenly;
 }
 
+.modes:hover {
+  cursor: pointer;
+}
+
 .nav {
   padding-top: 30px;
   padding-right: 0px;
@@ -464,7 +468,7 @@ button:hover img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 150px;
+  width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -481,11 +485,19 @@ button:hover img {
   width: 65px;
 }
 
+.settings:hover {
+  cursor: pointer;
+}
+
 .settings_dark {
   border: 2px solid  black;
   background-color: transparent;
   height: 44px;
   width: 65px;
+}
+
+.settings_dark:hover {
+  cursor: pointer;
 }
 
 .add_Icon {
@@ -496,12 +508,20 @@ button:hover img {
   margin-right: 10px;
 }
 
+.add_Icon:hover {
+  cursor: pointer;
+}
+
 .add_Icon_dark {
   border: 2px solid  black;
   background-color: transparent;
   height: 44px;
   width: 65px;
   margin-right: 10px;
+}
+
+.add_Icon_dark:hover {
+  cursor: pointer;
 }
 
 .search {

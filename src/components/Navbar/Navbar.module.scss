@@ -3,9 +3,9 @@
 .addOptions{
   position:absolute;
   top: 54px;
-  left: 0px;
+  left: 20px;
   z-index: 1;
-  border: 3px solid #EBF0F5;
+  border: 1.5px solid #DFE0E0;//#EBF0F5;
   border-radius: 18px;
   background:white;//#2c2d31;
   display: flex;
@@ -337,6 +337,9 @@ button:hover{
     justify-content: space-evenly;
   }
 }
+.modes:hover{
+  cursor: pointer;
+}
 
 .nav{
   
@@ -389,11 +392,12 @@ button:hover{
 .settings_cover{
   position: relative;
   align-items: center;
-  width:150px;
+  width:200px;
   display:flex;
   justify-content: space-evenly;
   margin-top: 15px;
 }
+
 .settings{
   border:1.5px solid  #dcdcdc;//white;
   background-color: transparent;
@@ -402,6 +406,9 @@ button:hover{
   
   // margin-right:30px;
   //  margin-top: 15px;
+}
+.settings:hover{
+  cursor: pointer;
 }
 .settings_dark{
   border:2px solid  black;;
@@ -412,6 +419,9 @@ button:hover{
   //  margin-top: 15px;
  
 }
+.settings_dark:hover{
+  cursor: pointer;
+}
 .add_Icon{
   border:1.5px solid  #dcdcdc;//white;
   background-color: transparent;
@@ -420,6 +430,9 @@ button:hover{
   margin-right: 10px;
   // margin-right:30px;
   //  margin-top: 15px;
+}
+.add_Icon:hover{
+  cursor: pointer;
 }
 .add_Icon_dark{
   border:2px solid  black;;
@@ -430,6 +443,9 @@ button:hover{
   // margin-right: 30px;
   //  margin-top: 15px;
  
+}
+.add_Icon_dark:hover{
+  cursor: pointer;
 }
 .search{
   width:50%;

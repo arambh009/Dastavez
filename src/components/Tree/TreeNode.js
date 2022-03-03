@@ -30,7 +30,7 @@ const TreeNode=({node,isDarkMode,crumbString,enterCrumbsAndKey})=>{
       <li>  
           <div className={isDarkMode?classes.folder_dark:classes.folder} onClick={onClickHandler}>
               <img src={iconSelector()}/>
-              {node.label}
+              <p>{node.label}</p>
           </div>
        
   

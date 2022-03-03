@@ -10,6 +10,7 @@ import fileIcon from  "../../images/file.svg"
 import imageFileIcon from "../../images/image_file.svg"
 import smallFileIcon from "../../images/smallFile.svg"
 import smallFolderIcon from "../../images/smallClosedFolder.svg"
+import moon from "../../images/moon.svg"
 
 const Navbar=({
   isDarkMode,DarkModeHandler,crumbs,
@@ -132,8 +133,8 @@ const Navbar=({
         
           <button className={classes.modes} onClick={modeClickHandler}>
             <div >
-              <img src={beam}></img>
-              <p>{isDarkMode?'Light Mode':'Dark Mode'}</p>
+              <img src={isDarkMode?moon:beam}></img>
+              <p>{isDarkMode?'Dark Mode':'Light Mode'}</p>
             </div>
           </button> 
 
@@ -145,12 +146,12 @@ const Navbar=({
                 </button>
 
                 {showAddOptions && (
-                  <div onClick={showAddOptionsHandler}>
-                    <div className={isDarkMode?classes.addOptions_dark:classes.addOptions}>
+                 
+                    <div className={isDarkMode?classes.addOptions_dark:classes.addOptions} onClick={showAddOptionsHandler}>
                       <button  onClick={onClickCreateFileHandler}>New File</button>
                       <button onClick={onClickCreateFolderHandler}>New Folder</button>
                     </div>
-                  </div>)
+                  )
                 }
              
                   <button className={isDarkMode?`${classes.settings_dark}`:classes.settings} onClick={showResetPinHandler}>
@@ -158,11 +159,11 @@ const Navbar=({
                   </button>
 
                   {showResetPinOption && (
-                    <div onClick={showResetPinHandler}>
-                      <div className={isDarkMode?classes.addOptions_dark:classes.addOptions}>
+                    
+                      <div className={isDarkMode?classes.addOptions_dark:classes.addOptions} onClick={showResetPinHandler}>
                         <button  onClick={onClickResetPinHandler}>Reset Pin</button>
                       </div>
-                    </div>
+                    
                     )
                   }
           </div>

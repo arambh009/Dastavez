@@ -16,9 +16,9 @@ function App() {
   },[pin]);
 //console.log(pin);
   return (
-    <div className="App">
+    <>
       {showDashboard===true?<Dashboard setAccountPin={setPin} AccountPin={pin}/>:<Homepage setShowDashboard={setShowDashboard} setAccountPin={setPin}/>}
-    </div>
+    </>
   );
 }
 

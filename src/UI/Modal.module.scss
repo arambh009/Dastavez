@@ -12,7 +12,8 @@
 }
 
 .error_message{
-  padding-top: 10px;
+  // padding-top: 10px;
+  
   margin-left: 63px;
   color: red;
 }
@@ -37,7 +38,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 3rem;
+      margin-top: 20px;
   }
   .pin_feild{
     height: 5rem;
@@ -263,4 +264,22 @@
     border: 1px solid #DFE0E0;
     height: 250px;
    box-sizing: border-box;
+  }
+  .unlock_button{
+    outline: none;
+    background: none;
+    padding: 10px 20px;
+    border: none;//3px solid #494c50;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all .1s ease;
+    background: #142683;
+    
   }
